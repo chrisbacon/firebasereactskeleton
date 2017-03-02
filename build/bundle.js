@@ -9453,6 +9453,12 @@ var _react = __webpack_require__(52);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _firebase = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"firebase\""); e.code = 'MODULE_NOT_FOUND';; throw e; }()));
+
+var firebase = _interopRequireWildcard(_firebase);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -9467,13 +9473,18 @@ var Main = function (_React$Component) {
     function Main(props) {
         _classCallCheck(this, Main);
 
-        return _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
 
-        // this.firebase = firebase.initializeApp({
-        //     //Put project config here
-        //   });
+        _this.firebase = firebase.initializeApp({
+            apiKey: "AIzaSyCRsULEqFu6ighw1IsZZ-exCHuBiFIZgVQ",
+            authDomain: "symphoniccodetest.firebaseapp.com",
+            databaseURL: "https://symphoniccodetest.firebaseio.com",
+            storageBucket: "symphoniccodetest.appspot.com",
+            messagingSenderId: "802683669466"
+        });
 
-        // this.database = this.firebase.database();
+        _this.database = _this.firebase.database();
+        return _this;
     }
 
     _createClass(Main, [{
